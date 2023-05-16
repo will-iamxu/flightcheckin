@@ -1,0 +1,26 @@
+{
+    "name": "Southwest Auto Check-in",
+    "version": "1.0",
+    "description": "Automatically checks you into your Southwest flight 24 hours before the flight.",
+    "manifest_version": 2,
+    "permissions": [
+      "storage",
+      "alarms",
+      "activeTab"
+    ],
+    "browser_action": {
+      "default_icon": "sue.png",
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.southwest.com/air/check-in/index.html"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
